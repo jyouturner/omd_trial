@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  omd:
+    image: consol/omd-labs-ubuntu:v3.30
+    volumes:
+      - ./omd-workdir/conf.d:/opt/omd/sites/demo/etc/naemon/conf.d:rw
+      - ./omd-workdir/htpasswd:/opt/omd/sites/demo/etc/htpasswd:ro
+      # - put here any other desired volumes
+    ports:
+      - 8443:443
